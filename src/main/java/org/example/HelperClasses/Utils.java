@@ -1,8 +1,6 @@
 package org.example.HelperClasses;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.SelenideWait;
 import org.openqa.selenium.By;
 
 import java.time.Duration;
@@ -24,11 +22,11 @@ public class Utils {
     }
 
     protected void waitForElementToBeVisible(SelenideElement element){
-        $(element).shouldBe(visible, Duration.ofSeconds(5));
+        element.shouldBe(visible, Duration.ofSeconds(5));
     }
 
     protected void waitForElementToBeHidden(SelenideElement element){
-        $(element).shouldBe(hidden, Duration.ofSeconds(5));
+        element.shouldBe(hidden, Duration.ofSeconds(5));
     }
 
 
