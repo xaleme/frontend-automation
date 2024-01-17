@@ -16,7 +16,7 @@ public class ContactUsPageTests extends ContactUsPage {
 
 
     @BeforeAll
-    public static void setUp() {
+    public static void setup() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         WebDriverSetup.openPage("/en-gb/contact/");
 

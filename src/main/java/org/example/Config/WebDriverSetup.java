@@ -7,9 +7,9 @@ public class WebDriverSetup {
 
     private static final String baseURL = "https://www.lucanet.com";
 
-    public  static void openPage(String page) {
+    public static void openPage(String page) {
         Configuration.browser = "chrome";
-        Configuration.headless = true;
+        Configuration.headless = false;
 
         Selenide.open(baseURL + page);
 

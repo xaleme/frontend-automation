@@ -4,14 +4,14 @@ package org.example.Pages;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.example.Enums.ContactUsFormFields;
-import org.example.HelperClasses.Utils;
+import org.example.HelperClasses.CommonUtils;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class ContactUsPage extends Utils {
+public class ContactUsPage extends CommonUtils {
 
     private SelenideElement pageTitle = $(By.cssSelector(".element-headline.text-center"));
     private SelenideElement cssSubmitForm = $(By.cssSelector("[value='Send Request']"));
@@ -24,8 +24,7 @@ public class ContactUsPage extends Utils {
     }
 
     protected void addDataToFormFields(String countryName) {
-        cssCountryField.findBy(exactText(countryName)).click();
-
+        selectFromDropdown(cssFormFields,countryName);
     }
 
     protected String getPageTitleText() {
