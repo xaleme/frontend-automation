@@ -1,4 +1,4 @@
-package org.example.HelperClasses;
+package org.example.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
@@ -9,14 +9,14 @@ import java.time.Duration;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
-public class CommonUtils {
-    private final SelenideElement cssCookiePopUp = $(By.id("CybotCookiebotDialog"));
-    private final SelenideElement cssAllowAllCookiesButton = $(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
-    private SelenideElement cssSearchBar = $(By.cssSelector(".form-control.form-control-sm"));
-    private SelenideElement cssSearchBarPopup = $(By.cssSelector(".form-control.form-control-lg"));
+public class BasePage {
+    private static final SelenideElement cssCookiePopUp = $(By.id("CybotCookiebotDialog"));
+    private static final SelenideElement cssAllowAllCookiesButton = $(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
+    private static final SelenideElement cssSearchBar = $(By.cssSelector(".form-control.form-control-sm"));
+    private static final SelenideElement cssSearchBarPopup = $(By.cssSelector(".form-control.form-control-lg"));
 
 
-    protected void searchFor(String textToSearch) {
+    public void searchFor(String textToSearch) {
         cssSearchBar.click();
         cssSearchBarPopup.val(textToSearch).pressEnter();
     }
@@ -32,7 +32,7 @@ public class CommonUtils {
         element.shouldBe(visible, Duration.ofSeconds(3));
     }
 
-    protected void waitForElementToBeHidden(SelenideElement element) {
+    protected static void waitForElementToBeHidden(SelenideElement element) {
         element.shouldBe(hidden, Duration.ofSeconds(3));
     }
 
