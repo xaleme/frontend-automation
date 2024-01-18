@@ -20,11 +20,6 @@ public class SearchPageTests {
         searchPage.searchFor("IFRS");
     }
 
-    @BeforeEach
-    public void acceptCookies() {
-
-    }
-
     @Test
     public void testFilterField() {
         searchPage.selectFromFilterField("ContentGroup");
