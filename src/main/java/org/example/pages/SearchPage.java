@@ -19,9 +19,11 @@ public class SearchPage extends BasePage {
     public void selectFromFilterField(String dropdownValue) {
         selectFromDropdown(cssFilterField, dropdownValue);
     }
+
     public void find() {
         cssFindButton.click();
     }
+
     public String getSearchResultsNumber() {
         return cssSearchResultsNumber.getText().substring(0,1);
     }

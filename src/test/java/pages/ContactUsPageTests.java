@@ -12,7 +12,7 @@ import static org.example.model.ContactUsFormFields.FIRST_NAME;
 
 @Tag("All")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class ContactUsPageTests {
+ class ContactUsPageTests {
 
     ContactUsPage contactUsPage = new ContactUsPage();
 
@@ -25,12 +25,12 @@ public class ContactUsPageTests {
     }
 
     @Test
-    public void testContactUsPageTitle() {
-        Assertions.assertEquals(contactUsPage.getPageTitleText(), "Contact us");
+     void testContactUsPageTitle() {
+        Assertions.assertEquals("Contact us", contactUsPage.getPageTitleText());
     }
 
     @Test
-    public void testFirstNameField() {
+     void testFirstNameField() {
         contactUsPage.addDataToFormFields(FIRST_NAME, "Alexandru");
         contactUsPage.submitForm();
         Assertions.assertTrue(contactUsPage.hasTextInFormField(FIRST_NAME));
@@ -38,14 +38,14 @@ public class ContactUsPageTests {
 
     @ParameterizedTest
     @ValueSource(strings = {"Aruba", "Jamaica", "ooh I wanna take ya to", "Bermuda", "Bahamas"})
-    public void testCountryField(String countryName) {
+     void testCountryField(String countryName) {
         contactUsPage.addDataToFormFields(countryName);
         Assertions.assertTrue(contactUsPage.hasTextInFormField(COUNTRY));
     }
 
 
     @Test
-    public void testFirstNameErrorMessage() {
+     void testFirstNameErrorMessage() {
         Assertions.assertEquals("Please complete this required field.", contactUsPage.getFieldErrorMessage(FIRST_NAME));
     }
 }

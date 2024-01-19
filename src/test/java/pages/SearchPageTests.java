@@ -8,7 +8,7 @@ import static org.example.config.WebDriverSetup.openPage;
 
 @Tag("All")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class SearchPageTests {
+ class SearchPageTests {
 
     SearchPage searchPage = new SearchPage();
 
@@ -21,7 +21,7 @@ public class SearchPageTests {
     }
 
     @Test
-    public void testFilterField() {
+     void testFilterField() {
         searchPage.selectFromFilterField("ContentGroup");
         searchPage.find();
         Assertions.assertEquals(searchPage.getNumberOfItemsInResults(), searchPage.getSearchResultsNumber());
