@@ -1,4 +1,4 @@
-#### This project is a POC for technical skills in the context of LucaNet technical interview.
+#### This project is a POC of technical skills, for technical interviews.
 
 
 ### Steps to run the tests
